@@ -73,7 +73,12 @@ export default (document, onRender) => {
 			onRender();
 		},
 		resetTextContent: (element) => {
-			element.textContent = '';
+			if (element.textContent) {
+				element.textContent = '';
+			} else if (element.childNodes.length) {
+				element.removeChild(element.childNodes[0]);
+			}
+
 			onRender();
 		},
 		removeChild: (parent, child) => {
