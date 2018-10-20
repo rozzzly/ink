@@ -72,6 +72,10 @@ export default (document, onRender) => {
 			element.textContent = newText;
 			onRender();
 		},
+		resetTextContent: (element) => {
+			element.textContent = '';
+			onRender();
+		},
 		removeChild: (parent, child) => {
 			parent.removeChild(child);
 			onRender();
